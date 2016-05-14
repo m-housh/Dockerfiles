@@ -1,0 +1,25 @@
+2016-05-14 17:43:04,304 INFO  NOCTX Loading node info from /data/server/.nodeinfo
+2016-05-14 17:43:04,310 INFO  NOCTX wrote nodeinfo to: /data/server/.nodeinfo
+2016-05-14 17:43:04,416 INFO  NOCTX Found plugin devpi-server-4.0.0 (/usr/lib/python3.5/site-packages).
+2016-05-14 17:43:04,416 INFO  NOCTX Found plugin devpi-server-4.0.0 (/usr/lib/python3.5/site-packages).
+2016-05-14 17:43:04,416 INFO  NOCTX Found plugin devpi-server-4.0.0 (/usr/lib/python3.5/site-packages).
+2016-05-14 17:43:04,417 INFO  NOCTX Found plugin devpi-server-4.0.0 (/usr/lib/python3.5/site-packages).
+2016-05-14 17:43:04,502 INFO  NOCTX devpi-server version: 4.0.0
+2016-05-14 17:43:04,503 INFO  NOCTX serverdir: /data/server
+2016-05-14 17:43:04,503 INFO  NOCTX uuid: 46c22b0d9742404b90d7b6582cb76dfc
+2016-05-14 17:43:04,503 INFO  NOCTX serving at url: http://127.0.0.1:3141
+2016-05-14 17:43:04,504 INFO  NOCTX bug tracker: https://bitbucket.org/hpk42/devpi/issues
+2016-05-14 17:43:04,504 INFO  NOCTX IRC: #devpi on irc.freenode.net
+2016-05-14 17:43:04,504 INFO  NOCTX Hit Ctrl-C to quit.
+2016-05-14 17:43:04,551 INFO  [req0] GET /
+2016-05-14 17:43:05,384 INFO  [req1] GET /+api
+2016-05-14 17:43:05,629 INFO  [req2] POST /+login
+2016-05-14 17:43:05,860 INFO  [req3] GET /root
+2016-05-14 17:43:05,872 INFO  [req4] PATCH /root
+2016-05-14 17:43:05,877 INFO  [req4] [Wtx0] setting password for user 'root'
+2016-05-14 17:43:05,877 INFO  [req4] [Wtx0] modified user 'root': password=*******
+2016-05-14 17:43:05,887 INFO  [req4] [Wtx0] fswriter1: committed: keys: 'root/.config'
+2016-05-14 17:43:06,117 INFO  [req5] PUT /root/public
+2016-05-14 17:43:06,122 INFO  [req5] [Wtx1] created index root/public: {'mirror_whitelist': ['*'], 'volatile': True, 'bases': (), 'type': 'stage', 'acl_upload': ['root'], 'pypi_whitelist': []}
+2016-05-14 17:43:06,130 INFO  [req5] [Wtx1] fswriter2: committed: keys: 'root/.config'
+2016-05-14 17:43:06,134 INFO  [req6] GET /root/public

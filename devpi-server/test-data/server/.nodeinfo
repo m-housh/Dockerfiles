@@ -1,0 +1,8 @@
+{
+  "uuid": "46c22b0d9742404b90d7b6582cb76dfc",
+  "role": "master",
+  "storage": {
+    "settings": null,
+    "name": "sqlite"
+  }
+}
