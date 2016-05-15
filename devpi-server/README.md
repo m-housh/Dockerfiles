@@ -32,8 +32,12 @@ $ docker run -d --name devpi-server\
 ----------
 
 To maintain the smallest footprint for the use case, this image only comes with devpi-server.
-The below options will install the ***devpi-web*** or ***devpi-client*** interfaces accordingly.  
+The below options will install the ***devpi-web*** or ***devpi-client*** interfaces 
+accordingly. All other options get passed into the ***devpi-server*** command used to start
+    the server.  
 
+>You can use below command to see available ***devpi-server*** options:  
+>`$ docker run -it --rm mhoush/devpi-server --help`
  
 * **-w | --web:**  
     Enable devpi-web
@@ -43,7 +47,7 @@ The below options will install the ***devpi-web*** or ***devpi-client*** interfa
 ### Environment Options
 -----------------------
 
-The following options are available to be set through enviornment variables.
+>The following options are available to be set through enviornment variables.
 
 * **DEVPI_PASSWORD:**  
     Used to set the password for the root user (defaults to '')

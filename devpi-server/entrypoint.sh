@@ -100,6 +100,9 @@ main() {
                     CLIENT_INSTALLED="true"
                     KEEP_CLIENT="true"
                     ;;
+                -h | --help )
+                    exec devpi-server --help && exit 0
+                    ;;
                 *)
                     if [[ "$args" != "" ]]; then
                         args="$1 $args"
