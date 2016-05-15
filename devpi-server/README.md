@@ -22,8 +22,9 @@ environment variable.
 $ docker pull mhoush/devpi-server
 $ docker run -d --name devpi-server\
     -e DEVPI_PASSWORD=password \ # root user password
+    -e PORT=3144 \ # use a custom port (default 3141)
     -v "${PWD}/data":/data \ # to persist data to the host
-    -p "80:3141" \
+    -p "80:3144" \
     mhoush/devpi-server --web # enable devpi-web interface
 ```
 
@@ -36,6 +37,19 @@ The below options will install the ***devpi-web*** or ***devpi-client*** interfa
  
 * **-w | --web:**  
     Enable devpi-web
-* **-c | --client:**
+* **-c | --client:**  
     Enable the devpi-client
 
+### Environment Options
+-----------------------
+
+The following options are available to be set through enviornment variables.
+
+* **DEVPI_PASSWORD:**  
+    Used to set the password for the root user (defaults to '')
+* **DEVPI_SERVERDIR:**  
+    Used to set a custom directory for server files.
+* **DEVPI_CLIENTDIR:**  
+    Used to set a custom directory for client files.
+* **PORT:**  
+    Used to set a custom PORT to run the server on (defaults to 3141)

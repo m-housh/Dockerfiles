@@ -61,7 +61,11 @@ start_devpi_server() {
     fi
     print ""
     print "=> Starting server..."
-    exec devpi-server --host "$HOST" --port "$PORT" "$@"
+    if [[ "$@" != "" ]]; then
+        exec devpi-server --host "$HOST" --port "$PORT" "$@"
+    else
+        exec devpi-server --host "$HOST" --port "$PORT"
+    fi
 }
 
 main() {
@@ -108,9 +112,6 @@ main() {
         done
 
         start_devpi_server "$args"
-        #print ""
-        #print "=> Starting devpi server..."
-        #exec devpi-server --host "${HOST}" --port "${PORT}"  "$args"
     fi
 }
 
