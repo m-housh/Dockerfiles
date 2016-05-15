@@ -1,25 +1,34 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
-function defaults {
+defaults() {
     : ${DEVPI_SERVERDIR="/data/server"}
     : ${DEVPI_CLIENTDIR="/data/client"}
+    : ${HOST="0.0.0.0"}
+    : ${PORT=3141}
 
-    export DEVPI_SERVERDIR DEVPI_CLIENTDIR
+    export DEVPI_SERVERDIR \
+        DEVPI_CLIENTDIR \
+        HOST \
+        PORT
 }
 
 CLIENT_INSTALLED="false"
 KEEP_CLIENT="false"
 
-function initialize {
+print(){
+    echo "$@" >&2
+}
+
+initialize() {
     if [[ "$CLIENT_INSTALLED" == "false" ]]; then
-        echo ""
-        echo "=> Installing devpi-client to initialize server"
+        print ""
+        print "=> Installing devpi-client to initialize server"
         pip install -q --no-cache-dir --ignore-installed --upgrade \
             devpi-client
     fi
 
-    echo ""
-    echo "=> Initializing devpi-server"
+    print ""
+    print "=> Initializing devpi-server"
     devpi-server --restrict-modify root --start --host 127.0.0.1 --port 3141
     devpi-server --status
     devpi use http://localhost:3141
@@ -31,52 +40,31 @@ function initialize {
     devpi-server --status
     
     if [[ "$KEEP_CLIENT" == "false" ]]; then
-        echo "\n\n" 
-        echo "=> We are done with devpi-client when prompted hit [y] to uninstall"
-        echo -n "Uninstall devpi-client (Y/n)?"
+        print "\n\n" 
+        print "=> We are done with devpi-client when prompted hit [y] to uninstall"
+        print -n "Uninstall devpi-client (Y/n)?"
         read -t 3 answer
         case $answer in
             n* | N* )
                 ;;
             * )
                 echo y | pip uninstall -q devpi-client;
+                echo ""
                 ;;
         esac
     fi
 }
 
-function start_devpi_server {
+start_devpi_server() {
     if ! [[ -f "$DEVPI_SERVERDIR/.serverversion" ]]; then
         initialize
     fi
-    echo ""
-    echo "=> Starting devpi server"
-    devpi-server --restrict-modify root --host 0.0.0.0 --port 3141
+    print ""
+    print "=> Starting server..."
+    exec devpi-server --host "$HOST" --port "$PORT" "$@"
 }
 
-function parse_args {
-    while [[ "$1" =~ ^- ]]; do
-        case $1 in
-            -w | --web )
-                echo "=> Installing devpi-web"
-                pip install -q --no-cache-dir --upgrade\
-                    devpi-web                
-                ;;
-            -c | --client )
-                pip install -q --no-cache-dir --upgrade \
-                    devpi-client
-                CLIENT_INSTALLED="true"
-                KEEP_CLIENT="true"
-                ;;
-            * )
-                ;;
-        esac
-        shift
-    done
-}
-
-
-function main {
+main() {
     
     # set-up defaults
     defaults
@@ -84,17 +72,45 @@ function main {
     if [[ "$1" == "" ]]; then
         # start a server without any args/commands
         start_devpi_server
-    elif [[ "$1" == "devpi" ]] || [[ "$1" =~ ^- ]]; then
+    elif [[ "$1" == "sh" ]]; then
+        print "=> Running non-devpi commands: $@"
+        exec "$@"
+    else
         if [[ "$1" == "devpi" ]]; then
             shift
         fi
-        # parse any remaining args if applicable
-        parse_args "$@" && \
-            start_devpi_server # start the server
-    else
-        echo "=> Running non-devpi commands: $@"
-        # run non-devpi args/commands
-        exec "$@"
+
+        args=""
+        while [[ "$1" != "" ]]; do
+            case $1 in
+
+                -w | --web )
+                    print ""
+                    print "=> Installing devpi-web..."
+                    pip install --no-cache-dir --upgrade devpi-web
+                    ;;
+                -c | --client )
+                    print ""
+                    print "=> Installing devpi-client..."
+                    pip install --no-cache-dir --upgrade devpi-client
+                    CLIENT_INSTALLED="true"
+                    KEEP_CLIENT="true"
+                    ;;
+                *)
+                    if [[ "$args" != "" ]]; then
+                        args="$1 $args"
+                    else
+                        args="$1"
+                    fi
+                    ;;
+            esac
+            shift
+        done
+
+        start_devpi_server "$args"
+        #print ""
+        #print "=> Starting devpi server..."
+        #exec devpi-server --host "${HOST}" --port "${PORT}"  "$args"
     fi
 }
 
