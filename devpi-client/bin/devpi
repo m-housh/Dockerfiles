@@ -33,23 +33,24 @@ if [[ "$(uname)" == "Darwin" ]]; then
     eval $(docker-machine env "$DOCKER_MACHINE_NAME")
 fi
 
-
+# short-circuit for help pages
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     # show help pages and exit
     docker run mhoush/devpi-client "$@"
     exit 0
 fi
 
+site_packges(){
+    # used to find the site-packages directory in a virtualenv.
+    local packages="$(find "$VIRTUAL_ENV/lib" -name "python*" -print0 | echo "$(xargs $1)")"
+    echo "$packages"
+}
+
 # check for virtual env in the environment.
 # and mount the site-packages directory if so
 if ! [[ "${VIRTUAL_ENV}" == "" ]]; then
     # find the site-packages for the virtualenv
-    # only checks for python versions 3.5 and 2.7
-    if [[ -d "${VIRTUAL_ENV}/lib/python3.5/site-packages" ]]; then
-        SITE_PACKAGES="${VIRTUAL_ENV}/lib/python3.5/site-packages"
-    elif [[ -d "${VIRTUAL_ENV}/lib/python2.7/site-packages" ]]; then
-        SITE_PACKAGES="${VIRTUAL_ENV}/lib/python2.7/site-packages"
-    fi
+    SITE_PACKAGES="$(site_packages)"
 fi
 
 machine_url(){
