@@ -3,20 +3,54 @@
 defaults() {
     : ${DEVPI_SERVERDIR="/data/server"}
     : ${DEVPI_CLIENTDIR="/data/client"}
-    : ${HOST="0.0.0.0"}
-    : ${PORT=3141}
+    : ${DEVPI_HOST="0.0.0.0"}
+    : ${DEVPI_PORT=3141}
 
     export DEVPI_SERVERDIR \
         DEVPI_CLIENTDIR \
-        HOST \
-        PORT
+        DEVPI_HOST \
+        DEVPI_PORT
 }
 
 CLIENT_INSTALLED="false"
 KEEP_CLIENT="false"
 
+
 print(){
     echo "$@" >&2
+}
+
+usage(){
+    cat <<EOF
+
+Container Usage:
+    
+    docker run -it --rm \\
+        -v "\$PWD/data":/data \\ # for persistance on the host
+        -e DEVPI_PASSWORD=password \\ # set password for devpi root user
+        -e DEVPI_PORT=3143 \\ # use custom port (default 3141)
+        -p "80:3143" \\ # host_port:container_port
+        mhoush/devpi-server [options...] [args...]
+
+    Options:
+        
+        -w | --web:         Enable devpi-web interface
+        -c | --client:      Enable devpi-client
+        -h | --help:        Show this page and devpi-server help page
+
+    Args:
+
+        Get passed to devpi-server command.
+
+    Environment Variable Settings:
+
+        DEVPI_PASSWORD:         Password for the root devpi user (default '')
+        DEVPI_PORT:             Port the server listens on. (default 3141)
+        DEVPI_SERVERDIR:        Directory to store server information to. (default /data)
+        DEVPI_CLIENTDIR:        Directory to store client information to. (default /data)
+
+Devpi-Server Usage:
+EOF
 }
 
 initialize() {
@@ -29,9 +63,9 @@ initialize() {
 
     print ""
     print "=> Initializing devpi-server"
-    devpi-server --restrict-modify root --start --host 127.0.0.1 --port 3141
+    devpi-server --restrict-modify root --start --host "$DEVPI_HOST" --port "$DEVPI_PORT" 
     devpi-server --status
-    devpi use http://localhost:3141
+    devpi use "http://$DEVPI_HOST:$DEVPI_PORT"
     devpi login root --password=''
     devpi user -m root password="${DEVPI_PASSWORD}"
     devpi index -y -c public pypi_whitelist='*'
@@ -40,7 +74,7 @@ initialize() {
     devpi-server --status
     
     if [[ "$KEEP_CLIENT" == "false" ]]; then
-        print "\n\n" 
+        print ""
         print "=> We are done with devpi-client when prompted hit [y] to uninstall"
         print -n "Uninstall devpi-client (Y/n)?"
         read -t 3 answer
@@ -62,9 +96,9 @@ start_devpi_server() {
     print ""
     print "=> Starting server..."
     if [[ "$@" != "" ]]; then
-        exec devpi-server --host "$HOST" --port "$PORT" "$@"
+        exec devpi-server --host "$DEVPI_HOST" --port "$DEVPI_PORT" "$@"
     else
-        exec devpi-server --host "$HOST" --port "$PORT"
+        exec devpi-server --host "$DEVPI_HOST" --port "$DEVPI_PORT"
     fi
 }
 
@@ -101,7 +135,10 @@ main() {
                     KEEP_CLIENT="true"
                     ;;
                 -h | --help )
-                    exec devpi-server --help && exit 0
+                    print ""
+                    print "$(usage)"
+                    print ""
+                    exec devpi-server --help
                     ;;
                 *)
                     if [[ "$args" != "" ]]; then
