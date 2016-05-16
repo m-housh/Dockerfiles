@@ -1,17 +1,21 @@
-#!/usr/bin/env zsh
-# change above to your flavor of shell
-#
+#!/bin/sh
+
+version="0.1.1"
+
 # A script for all devpi commands to be sent to a docker container.
-# This will mount your current directory into the container
 
-site_packages=""
-machine_name="default"  # change to your docker-machine name OS X
-
-# variables to pass into the docker-devpi-client container.
+# variables to pass into/set-up the devpi-client container.
 # adjust accordingly
-DEVPI_USER="devpi"
-DEVPI_URL="http://localhost:8080"
-DEVPI_USE="dev"
+DEVPI_USER="root"
+DEVPI_HOST="default.docker"
+DEVPI_PORT="3141"
+DEVPI_INDEX="root/public"
+SITE_PACKAGES=
+SCHEME="http"
+URL="${SCHEME}://${DEVPI_HOST}:${DEVPI_PORT}"
+
+# read docker machine name from environment or set to default machine.
+: ${DOCKER_MACHINE_NAME="default"}
 
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -19,14 +23,21 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # change name if your docker machine name is not default
     # ex. $(docker-machine status docker)
 
-    if ! [[ "$(docker-machine status $machine_name)" == "Running" ]]; then
-        docker-machine start "$machine_name"
+    if ! [[ "$(docker-machine status $DOCKER_MACHINE_NAME)" == "Running" ]]; then
+        docker-machine start "$DOCKER_MACHINE_NAME"
     fi
 
     # connect to the docker daemon on OS X
     # change name if your docker-machine name is not default
     # ex. $(docker-machine env docker)
-    eval $(docker-machine env "$machine_name")
+    eval $(docker-machine env "$DOCKER_MACHINE_NAME")
+fi
+
+
+if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
+    # show help pages and exit
+    docker run mhoush/devpi-client "$@"
+    exit 0
 fi
 
 # check for virtual env in the environment.
@@ -35,40 +46,45 @@ if ! [[ "${VIRTUAL_ENV}" == "" ]]; then
     # find the site-packages for the virtualenv
     # only checks for python versions 3.5 and 2.7
     if [[ -d "${VIRTUAL_ENV}/lib/python3.5/site-packages" ]]; then
-        site_packages="${VIRTUAL_ENV}/lib/python3.5/site-packages"
+        SITE_PACKAGES="${VIRTUAL_ENV}/lib/python3.5/site-packages"
     elif [[ -d "${VIRTUAL_ENV}/lib/python2.7/site-packages" ]]; then
-        site_packages="${VIRTUAL_ENV}/lib/python2.7/site-packages"
+        SITE_PACKAGES="${VIRTUAL_ENV}/lib/python2.7/site-packages"
     fi
 fi
 
-# option to set the DEVPI_USE on the fly,
-# must be the first arg to this script
-# ex. $ devpi --use <your index> upload --with-docs
-if [[ "$1" == "--use" ]]; then
-    shift
-    DEVPI_USE="$1"
-    shift
-fi
-    
-if [[ "$site_packages" == "" ]]; then
+machine_url(){
+    # get's the ip address of the machine.  May not be needed if not running OS X.
+    local host="$(docker-machine url $DOCKER_MACHINE_NAME)"
+    host=${host##tcp://} # remove tcp:// from front host string
+    host=${host%:2376} # remove :2376 from tail of host string
+    echo $host
+}
+
+if [[ "$SITE_PACKAGES" == "" ]]; then
     # start a container without site-packages mounted
-    docker run -h DEVPI-DOCKER -it --rm \
+    # the --add-host option may not be necessary depending on your setup, but required
+    # for mine running on OS X
+    docker run -it --rm \
+        --add-host "${DEVPI_HOST}":"$(machine_url)" \
         -v "${PWD}":/mnt \
         -v "${HOME}/.certs":/certs \
-        -v "${HOME}/Dockerfiles/devpi-client/pip":/root/.pip \
+        -v "${HOME}/.pip/":/root/.pip \
         -e DEVPI_USER="${DEVPI_USER}" \
-        -e DEVPI_URL="${DEVPI_URL}" \
-        -e DEVPI_USE="${DEVPI_USE}" \
-        mhoush/docker-devpi-client "$@"
+        -e DEVPI_URL="${URL}" \
+        -e DEVPI_INDEX="${DEVPI_INDEX}" \
+        mhoush/devpi-client "$@"
 else
     # start a container with site-packages mounted
-    docker run -h DEVPI-DOCKER -it --rm \
+    # the --add-host option may not be necessary depending on your setup, but required
+    # for mine running on OS X
+    docker run  -it --rm \
+        --add-host "${DEVPI_HOST}":"$(machine_url)" \
         -v "${PWD}":/mnt \
-        -v "$site_packages":/site-packages \
-        -v /Users/michael/.certs:/certs \
-        -v /Users/michael/Dockerfiles/devpi-client/pip:/root/.pip \
+        -v "$SITE_PACKAGES":/site-packages \
+        -v "${HOME}/.certs":/certs \
+        -v "${HOME}/.pip":/root/.pip \
         -e DEVPI_USER="${DEVPI_USER}" \
-        -e DEVPI_URL="${DEVPI_URL}" \
-        -e DEVPI_USE="${DEVPI_USE}" \
-        mhoush/docker-devpi-client "$@"
+        -e DEVPI_URL="${URL}" \
+        -e DEVPI_INDEX="${DEVPI_INDEX}" \
+        mhoush/devpi-client "$@"
 fi

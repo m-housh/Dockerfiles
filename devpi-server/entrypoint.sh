@@ -96,9 +96,9 @@ start_devpi_server() {
     print ""
     print "=> Starting server..."
     if [[ "$@" != "" ]]; then
-        exec devpi-server --host "$DEVPI_HOST" --port "$DEVPI_PORT" "$@"
+        exec devpi-server --restrict-modify root --host "$DEVPI_HOST" --port "$DEVPI_PORT" "$@"
     else
-        exec devpi-server --host "$DEVPI_HOST" --port "$DEVPI_PORT"
+        exec devpi-server --restrict-modify root --host "$DEVPI_HOST" --port "$DEVPI_PORT"
     fi
 }
 

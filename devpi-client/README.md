@@ -4,7 +4,7 @@
 ## Usage 
 
 This image allows you to run ***devpi-client*** commands inside a docker container.  All commands 
-get sent to `devpi` unless you use `sh` or `bash` will open a shell session inside the
+get sent to `devpi` unless you use `sh [args..]` will open a shell session inside the
 container.  There is also a utility script for easier start-up/access to using the 
 devpi-client from your host machine.  See the 
 [github repo](https://github.com/m-housh/docker-devpi-client/tree/master/bin) for installation.
@@ -18,11 +18,35 @@ $ docker run -it --rm \
     -v "${PWD}/venv/lib/python3.5/site-packages":/site-packages \
     -v "${HOME}/.certs":/certs \
     -e DEVPI_USER=devpi \
-    -e DEVPI_URL=http://localhost:8080/packages \
-    -e DEVPI_USE=dev \
-    mhoush/docker-devpi-client upload --with-docs
-
+    -e DEVPI_URL=http://localhost:3141/packages \
+    -e DEVPI_INDEX=/devpi/dev \
+    mhoush/devpi-client [options...] [args...]
 ```
+#### Options
+---
+The following options can be passed into the container before any devpi commands for set
+up of the devpi session.
+* **-h | --help:**  
+    Show help pages.
+* **--host:**  
+    Set the devpi-host url.
+* **--index:**  
+    Set the devpi index to connect to
+* **--user:**  
+    Set the devpi user (if needed for login purposes)
+* **--password:**  
+    Set the devpi user's password (if needed for login purposes).  If in interactive mode
+    then you can supply this when prompted during the login process.
+* **--login:**  
+    Force a login before any devpi commands.
+
+#### Args
+---
+All the args get passed into the devpi command.  
+>To show devpi commands, use below.  
+`docker run --rm mhoush/devpi-client --help`  
+or:  
+`docker run --rm mhoush/devpi-client [command] --help`
 
 
 #### Volumes:  
@@ -31,7 +55,6 @@ $ docker run -it --rm \
 1. **/mnt**:   
     Where to mount your source code, for upload.
 2. **/site-packages:**
-
     Where to mount your virtual-env site-packages directory if installing
     from a devpi server.  If this directory is not empty then it will
     set the envirnment variable's PIP_TARGET and PYTHONPATH to point to
@@ -39,10 +62,8 @@ $ docker run -it --rm \
 3. **/root/.pip:**  
     Where to mount a custom ~/.pip/pip.conf
 4. **/certs:**  
-    Where to mount custom CA certs.  If this directory is not empty
-    then it will copy the certs into another directory and run the
-    openssl c_rehash utility on that directory, which is required
-    for requests to validate certificates.
+    Where to mount custom CA certs to verify requests to your devpi server (if you use a
+    self signed certificate for your server).  If this directory is not empty then it will copy the certs into another directory and run the **OPENSSL** `c_rehash` utility on that directory, which is required for requests to validate certificates. There will be no consequences for you, and will not affect or change any of the certs that you mount.
 
 #### Environment Variables:
 ---
@@ -57,6 +78,12 @@ $ docker run -it --rm \
 3. **DEVPI_USE:**  
     Index to use after login. If not empty then will run `devpi use "${DEVPI_USE}"` before
     your commands.
+4. **DEVPI_PASSWORD:**  
+    Set the login password.  (Use at your own risk, if used as environment variable and
+    you push/commit an image then it will still be in the environment)
+5. **DEVPI_KEEP_ALIVE:**  
+    If "true" then after any devpi commands you will get a shell prompt, if "false" 
+    (default) then the container will exit after the devpi commands.
 
 ### Examples:
 ---
@@ -69,22 +96,21 @@ $ docker run -it --rm \
     -v "${PWD}/venv/lib/python3.5/site-packages":/site-packages \
     -v "${HOME}/.certs":/certs \
     -e DEVPI_USER=devpi \
-    -e DEVPI_URL=http://localhost:8080/packages \
-    -e DEVPI_USE=dev \
-    mhoush/docker-devpi-client upload --with-docs
+    -e DEVPI_URL=http://localhost:3141/packages \
+    -e DEVPI_INDEX=dev \
+    mhoush/devpi-client --password "password" upload --with-docs
 ```
 *Open an interactive shell in the container.*
 ```bash
 $ docker run -it --rm \
-    -h docker-devpi\ # host name to make the shell prompt look nicer
     -v "${PWD}":/mnt \
-    mhoush/docker-devpi-client bash
+    mhoush/devpi-client sh
 
 => starting shell...
-root@docker-devpi:/mnt$  devpi use http://your.devpi.com/
+/mnt$  devpi use http://your.devpi.com/
 # more commands
 ...
-root@docker-devpi:/mnt$ exit
+/mnt$ exit
 ```
 
 

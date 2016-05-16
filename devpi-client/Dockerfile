@@ -1,8 +1,7 @@
-FROM python:alpine
-
+FROM mhoush/py3
+MAINTAINER https://github.com/m-housh
 
 RUN apk add --update --no-cache --purge \
-    zsh \
     openssl \
     git && \
     pip install --no-cache-dir --upgrade --ignore-installed \
@@ -21,4 +20,4 @@ WORKDIR /mnt
 
 ENTRYPOINT ["/entrypoint.sh"]
 
-CMD ["-h"]
+CMD ["--help"]
