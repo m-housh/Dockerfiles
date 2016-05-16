@@ -52,16 +52,16 @@ or:
 #### Volumes:  
 ---
 
-1. **/mnt**:   
+* **/mnt**:   
     Where to mount your source code, for upload.
-2. **/site-packages:**
+* **/site-packages:**
     Where to mount your virtual-env site-packages directory if installing
     from a devpi server.  If this directory is not empty then it will
     set the envirnment variable's PIP_TARGET and PYTHONPATH to point to
     the /site-packages directory.
-3. **/root/.pip:**  
+* **/root/.pip:**  
     Where to mount a custom ~/.pip/pip.conf
-4. **/certs:**  
+* **/certs:**  
     Where to mount custom CA certs to verify requests to your devpi server (if you use a
     self signed certificate for your server).  If this directory is not empty then it will copy the certs into another directory and run the **OPENSSL** `c_rehash` utility on that directory, which is required for requests to validate certificates. There will be no consequences for you, and will not affect or change any of the certs that you mount.
 
@@ -69,19 +69,19 @@ or:
 ---
 
  
- 1. **DEVPI_URL:**  
+* **DEVPI_URL:**  
     Your devpi server url. If not empty then will run `devpi use "${DEVPI_URL}"` before your
     commands.
-2. **DEVPI_USER:**  
+* **DEVPI_USER:**  
     Your username.  If not empty then will run `devpi login "${DEVPI_USER}"` before your 
     commands.
-3. **DEVPI_USE:**  
+* **DEVPI_USE:**  
     Index to use after login. If not empty then will run `devpi use "${DEVPI_USE}"` before
     your commands.
-4. **DEVPI_PASSWORD:**  
+* **DEVPI_PASSWORD:**  
     Set the login password.  (Use at your own risk, if used as environment variable and
     you push/commit an image then it will still be in the environment)
-5. **DEVPI_KEEP_ALIVE:**  
+* **DEVPI_KEEP_ALIVE:**  
     If "true" then after any devpi commands you will get a shell prompt, if "false" 
     (default) then the container will exit after the devpi commands.
 
