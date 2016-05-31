@@ -1,18 +1,34 @@
 #!/bin/sh
 
-version="0.1.1"
+version="0.1.2"
 
 # A script for all devpi commands to be sent to a docker container.
+# You can optionally set a config file to hold different defaults to be accessed by
+# passing the `-n | --name` flag into this script, to read values from a file see the
+# example config file. Or set the values below to your default values. 
+
+: ${DEBUG="false"}
+
+# derive debug from environment (0 = true || 1 = false) 
+# can also be set to "true" or "false"
+if [[ "$DEBUG" == "0" ]];then 
+    DEBUG="true" 
+elif [[ "$DEBUG" == "1" ]];then
+    DEBUG="false"
+fi
 
 # variables to pass into/set-up the devpi-client container.
 # adjust accordingly
 DEVPI_USER="root"
-DEVPI_HOST="default.docker"
+DEVPI_HOST="localhost"
 DEVPI_PORT="3141"
 DEVPI_INDEX="root/public"
+DEVPI_PASSWORD=
+DEVPI_CERTS=
 SITE_PACKAGES=
 SCHEME="http"
 URL="${SCHEME}://${DEVPI_HOST}:${DEVPI_PORT}"
+DEVPI_CONFIG_FILE="${HOME}/.devpi-data/config/devpi.conf"
 
 # read docker machine name from environment or set to default machine.
 : ${DOCKER_MACHINE_NAME="default"}
@@ -33,59 +49,234 @@ if [[ "$(uname)" == "Darwin" ]]; then
     eval $(docker-machine env "$DOCKER_MACHINE_NAME")
 fi
 
-# short-circuit for help pages
+# short-circuit for help pages.
 if [[ "$1" == "-h" ]] || [[ "$1" == "--help" ]]; then
     # show help pages and exit
     docker run mhoush/devpi-client "$@"
     exit 0
 fi
 
-site_packges(){
-    # used to find the site-packages directory in a virtualenv.
-    local packages="$(find "$VIRTUAL_ENV/lib" -name "python*" -print0 | echo "$(xargs $1)")"
-    echo "$packages"
-}
-
 # check for virtual env in the environment.
 # and mount the site-packages directory if so
-if ! [[ "${VIRTUAL_ENV}" == "" ]]; then
-    # find the site-packages for the virtualenv
-    SITE_PACKAGES="$(site_packages)"
-fi
-
-machine_url(){
-    # get's the ip address of the machine.  May not be needed if not running OS X.
-    local host="$(docker-machine url $DOCKER_MACHINE_NAME)"
-    host=${host##tcp://} # remove tcp:// from front host string
-    host=${host%:2376} # remove :2376 from tail of host string
-    echo $host
+find_and_set_site_packages(){
+    local packages=""
+    [[ "${VIRTUAL_ENV}" != "" ]] && \
+        SITE_PACKAGES="$(find "$VIRTUAL_ENV/lib" -name "python*" -print0 | echo "$(xargs $1)")"
+    return 0
 }
 
-if [[ "$SITE_PACKAGES" == "" ]]; then
-    # start a container without site-packages mounted
-    # the --add-host option may not be necessary depending on your setup, but required
-    # for mine running on OS X
-    docker run -it --rm \
-        --add-host "${DEVPI_HOST}":"$(machine_url)" \
-        -v "${PWD}":/mnt \
-        -v "${HOME}/.certs":/certs \
-        -v "${HOME}/.pip/":/root/.pip \
-        -e DEVPI_USER="${DEVPI_USER}" \
-        -e DEVPI_URL="${URL}" \
-        -e DEVPI_INDEX="${DEVPI_INDEX}" \
-        mhoush/devpi-client "$@"
-else
-    # start a container with site-packages mounted
-    # the --add-host option may not be necessary depending on your setup, but required
-    # for mine running on OS X
-    docker run  -it --rm \
-        --add-host "${DEVPI_HOST}":"$(machine_url)" \
-        -v "${PWD}":/mnt \
-        -v "$SITE_PACKAGES":/site-packages \
-        -v "${HOME}/.certs":/certs \
-        -v "${HOME}/.pip":/root/.pip \
-        -e DEVPI_USER="${DEVPI_USER}" \
-        -e DEVPI_URL="${URL}" \
-        -e DEVPI_INDEX="${DEVPI_INDEX}" \
-        mhoush/devpi-client "$@"
-fi
+
+start_container(){
+
+    print(){
+        echo "[StartContainer]=> $@" >&2
+        return 0
+    }
+    
+    # check for a site-packages directory in a virtualenv 
+    # to mount and set it if found.
+    find_and_set_site_packages
+
+    if [[ "$DEBUG" == "true" ]]; then
+        [[ "$SITE_PACKAGES" == "" ]] && \
+            print "Did not find a site-packages directory."
+
+        [[ "$SITE_PACKAGES" != "" ]] && \
+            print "Found site-packages: '$SITE_PACKAGES'"
+    fi
+
+    if [[ "$SITE_PACKAGES" == "" ]]; then
+        # start a container without site-packages mounted
+        # the --add-host option may not be necessary depending on your setup, but required
+        # for mine running on OS X
+        docker run -h DEVPI-DOCKER -it --rm \
+            --add-host "${DEVPI_HOST}":"$(docker-machine ip $DOCKER_MACHINE_NAME)" \
+            -v "${PWD}":/mnt \
+            -v "${HOME}/.certs":/certs \
+            -v "${HOME}/.pip/":/root/.pip \
+            -e DEVPI_USER="${DEVPI_USER}" \
+            -e DEVPI_URL="${URL}" \
+            -e DEVPI_INDEX="${DEVPI_INDEX}" \
+            mhoush/devpi-client --password "$DEVPI_PASSWORD" "$@"
+    else
+        # start a container with site-packages mounted
+        # the --add-host option may not be necessary depending on your setup, but required
+        # for mine running on OS X as my DNS server.
+        docker run -h DEVPI-DOCKER -it --rm \
+            --add-host "${DEVPI_HOST}":"$(machine_url)" \
+            -v "${PWD}":/mnt \
+            -v "$SITE_PACKAGES":/site-packages \
+            -v "${HOME}/.certs":/certs \
+            -v "${HOME}/.pip":/root/.pip \
+            -e DEVPI_USER="${DEVPI_USER}" \
+            -e DEVPI_URL="${URL}" \
+            -e DEVPI_INDEX="${DEVPI_INDEX}" \
+            mhoush/devpi-client --password "$DEVPI_PASSWORD" "$@"
+    fi
+    return 0
+}
+
+
+# get set-up from a config file.
+config_from_file(){
+    local user=
+    local file=
+    local found="false"
+
+    print(){
+        echo "[Config]=> $@" >&2
+    }
+    
+    # derive user from arg 1
+    [[ "$1" != "" ]] && user="$1"
+    
+    # derive file from arg 2 or DEVPI_CONFIG_FILE
+    [[ "$DEVPI_CONFIG_FILE" != "" ]] && [[ -f "$DEVPI_CONFIG_FILE" ]] && \
+        file="$DEVPI_CONFIG_FILE"
+
+    [[ "$file" == "" ]] && [[ "$user" == "" ]] && return 1 || \
+        [[ "$DEBUG" == "true" ]] && \
+        print "getting config from file: '$file', for directive: '$user'"
+    
+    # read config from file for the given user directive.
+    while IFS="=" read -r key value; do
+        case "$key" in
+            *"$user"* )
+                found="true" 
+                [[ "$DEBUG" == "true" ]] && \
+                    echo "[Config]=> Found directive for '$user'"
+                ;;
+            *username* )
+                  [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for username: '$value'" && \
+                    DEVPI_USER="$value"
+                ;;
+            *host* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    DEVPI_HOST="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for host: '$DEVPI_HOST'"
+                ;;
+            *port* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    DEVPI_PORT="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for port: '$DEVPI_PORT'"
+                ;;
+            *password* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    DEVPI_PASSWORD="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for password: '$DEVPI_PASSWORD'"  \
+                ;;
+            *index* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    DEVPI_INDEX="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for index: '$DEVPI_INDEX'"
+                ;;
+            *scheme* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    SCHEME="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for scheme: '$SCHEME'"
+                ;;
+            *url* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    URL="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for url: '$URL'"
+                ;;
+            *certs* )
+                [[ "$found" == "true" ]] && \
+                    [[ "$value" != "" ]] && \
+                    [[ -d "$value" ]] && \
+                    DEVPI_CERTS="$value" && \
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set value for certs: '$DEVPI_CERTS'"
+                ;;
+            '['* )
+                # here we are at a key/directive name, if not the directive we are
+                # looking for then set 'found' to false so we don't use any values
+                # from this directive
+                [[ "$key" != *"$user"* ]] && \
+                    found="false" || \
+                    found="true" 
+                ;;
+            '#'* )
+                ;;
+            * ) 
+                ;;
+        esac 
+    done < "$file"
+    
+    return 0
+}
+
+main (){
+
+    local get_config_from_file="false"
+    local user_directive=
+    local args=
+
+    print(){
+        echo "[Main]=> $@" >&2
+    }
+    # parse options
+    while [[ "$1" != "" ]]; do
+        case "$1" in
+            -f | --file )
+                [[ "$DEBUG" == "true" ]] && \
+                    print "Got config file request: '$2'"
+
+                [[ "$2" != "" ]] && \
+                    [[ -f "$2" ]] && \
+                    DEVPI_CONFIG_FILE="$2" && \
+                    get_config_from_file="true" && \ 
+                    [[ "$DEBUG" == "true" ]] && \
+                    print "Set file path: '$DEVPI_CONFIG_FILE'" && \
+                    shift 
+                ;;
+            -n | --name )
+                [[ "$DEBUG" == "true" ]] && \
+                    print "Got directive request for name: '$2'"
+                [[ "$2" != "" ]] && \
+                    user_directive="$2" && \
+                    get_config_from_file="true" && \
+                    shift
+                ;;
+            * )
+                [[ "$args" == "" ]] && args="$1" || \
+                    args="$args $1"
+                ;;
+        esac
+        shift
+    done
+    
+    # reset @ to the left-over args
+    set -- $args
+
+    # load config from file if get_config_from_file is true
+    [[ "$get_config_from_file" == "true" ]] && \
+        [[ "$user_directive" != "" ]] && \
+        config_from_file "$user_directive"
+
+    [[ "$DEBUG" == "true" ]] && \
+        echo "" >&2 && \
+        print "Starting container..."
+    
+    # start a container based on the settings.
+    start_container "$@"
+
+}
+
+# call the main script.
+main "$@"

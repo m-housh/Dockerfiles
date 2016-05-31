@@ -162,23 +162,19 @@ main() {
                     help "$args"
                     ;;
                 --host )
-                    export DEVPI_URL="$2"
-                    shift
+                    [[ "$2" != "" ]] && export DEVPI_URL="$2" && shift;
                     ;;
                 --user )
-                    export DEVPI_USER="$2"
-                    shift
+                    [[ "$2" != "" ]] && export DEVPI_USER="$2" && shift;
                     ;;
                 --index )
-                    export DEVPI_INDEX="$2"
-                    shift
+                    [[ "$2" != "" ]] && export DEVPI_INDEX="$2" && shift;
                     ;;
                 --login )
                     REQUIRES_LOGIN="true"
                     ;;
                 --password )
-                    DEVPI_PASSWORD="$2"
-                    shift
+                    [[ "$2" != "" ]] && DEVPI_PASSWORD="$2" && shift;
                     ;;
                 --keep-alive )
                     DEVPI_KEEP_ALIVE="true"
@@ -215,10 +211,9 @@ main() {
     devpi use "${DEVPI_INDEX}"
     # call the commands.
     echo "=> Executing devpi comands: '$args'..."
+
     [[ "$DEVPI_KEEP_ALIVE" == "false" ]] && \
-        exec devpi "$@"  || \
-        exec devpi "$@" && \
-        sh
+       exec devpi "$@" || devpi "$@" && sh
 }
 
 # call the main script
