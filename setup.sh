@@ -1,7 +1,7 @@
 #!/bin/sh
 
-CONFIG_PATH="$HOME/Dockerfiles/config"
-SETUP_SCRIPTS_DIR="$HOME/Dockerfiles/setup_scripts"
+CONFIG_PATH="$HOME/Dockerfiles/.config"
+SETUP_SCRIPTS_DIR="$HOME/Dockerfiles/.setup_scripts"
 
 
 
