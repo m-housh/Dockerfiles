@@ -2,3 +2,4 @@ private/*
 in-progress/*
 devpi-server/test-data/*
 .config/*
+.env-files/*
