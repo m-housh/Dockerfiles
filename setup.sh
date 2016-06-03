@@ -17,7 +17,9 @@ main(){
 
     for file in "$BIN"/*; do
         if [ -f "$file" ]; then
-            ln -sv $file "$HOME_BIN/"
+            file_name_with_ext="${file##*/}"
+            file_name="${file_name_with_ext%.*}"
+            ln -sv $file "$HOME_BIN/$file_name"
         fi
     done
     
