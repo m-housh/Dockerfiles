@@ -3,6 +3,8 @@
 CONFIG_PATH="$HOME/Dockerfiles/.config"
 SETUP_SCRIPTS_DIR="$HOME/Dockerfiles/.setup_scripts"
 
+VERSION="0.1.1"
+
 
 
 main(){
