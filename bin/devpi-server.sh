@@ -1,6 +1,6 @@
 #!/bin/sh
 
-: ${DEVPI_DATA_DIR="$HOME/.devpi-data"}
+${DEVPI_DATA_DIR="$HOME/.devpi-data"}
 ENV_FILE="$HOME/.env-files/devpi-server.env"
 
 if ! [ -f "$ENV_FILE" ]; then
