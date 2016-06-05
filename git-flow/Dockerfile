@@ -2,21 +2,21 @@ FROM alpine:3.3
 
 RUN apk add --no-cache \
     git \
-    util-linux \
-    bash \
-    perl
+    curl \
+    perl \
+    util-linux && \
+    cd /tmp && \
+    curl -OL https://raw.github.com/nvie/gitflow/develop/contrib/gitflow-installer.sh && \
+    sed -i '1s/#!\/bin\/bash/#!\/bin\/sh/' /tmp/gitflow-installer.sh && \
+    chmod +x /tmp/gitflow-installer.sh && \
+    sh /tmp/gitflow-installer.sh && \
+    rm -rf /var/tmp/* /tmp/* /var/cache/apk/*
 
-RUN cd /tmp && \
-    git clone https://github.com/datasift/gitflow /gitflow && \
-    cd /gitflow && \
-    sh install.sh && \
-    rm -rf /tmp/* /var/tmp/* /var/cache/apk/*
-
-COPY ./entrypoint.sh /
+COPY entrypoint.sh /
 
 VOLUME /repo
-VOLUME /config
 
 WORKDIR /repo
 
 ENTRYPOINT ["/entrypoint.sh"]
+    

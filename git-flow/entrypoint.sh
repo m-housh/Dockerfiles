@@ -35,8 +35,8 @@ if [ "$1" == "sh" ]; then
     shift
     sh "$@"
 else
-    print_if_debug "Executing 'git hf' with args: '$@'"
-    exec git hf "$@"
+    print_if_debug "Executing 'git flow $@'"
+    exec git flow "$@"
 fi
 
 
