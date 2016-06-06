@@ -1,8 +1,6 @@
 #!/bin/sh
 
 
-version="0.1.0"
-
 HERE="$HOME/Dockerfiles"
 CONFIG_PATH="$HERE/.config"
 SETUP_SCRIPTS_DIR="$HERE/.setup_scripts"
