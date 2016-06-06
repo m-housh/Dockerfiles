@@ -9,9 +9,7 @@ HOME_BIN="$HOME/.bin/docker_bin"
 FORCE="false"
 
 
-
-VERSION="0.1.1"
-
+source "$HERE/version.sh"
 
 
 main(){
@@ -22,6 +20,10 @@ main(){
             -f | --force )
                 link_cmd="$link_cmd -f"
                 FORCE="true"
+                ;;
+            -v | --version )
+                echo "${VERSION}"
+                exit 0
                 ;;
             * )
                 ;;
