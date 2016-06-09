@@ -1,3 +1,3 @@
 #!/bin/sh
 
-export VERSION="0.1.1"
+export VERSION="0.1.2"
