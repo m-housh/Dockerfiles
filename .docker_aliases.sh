@@ -1,1 +1,5 @@
-alias gf='docker run -it --rm -e DEBUG=0 -v "$PWD":/repo -v "$HOME/Dockerfiles/.config/git-flow":/config mhoush/git-flow'
+# git-flow
+alias gf='git_flow'
+
+# clean-up dangling docker images.
+alias dci='cleanup_images'
