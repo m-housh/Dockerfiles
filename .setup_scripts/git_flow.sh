@@ -1,6 +1,6 @@
 #!/bin/sh
 
-: ${CONFIG_PATH="${HOME}/Dockerfiles/config"}
+: ${CONFIG_PATH="${HOME}/Dockerfiles/.config"}
 
 git_flow_setup(){
     local config="$CONFIG_PATH/git-flow"

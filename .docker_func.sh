@@ -14,6 +14,12 @@ git_flow(){
         -e DEBUG=0 \
         -v "${PWD}":/repo \
         -v "${HOME}/Dockerfiles/.config/git-flow":/config \
-        mhoush/git-flow "$@"
+        $DOCKER_PREFIX/git-flow "$@"
+}
+
+sphinx(){
+    docker run -it --rm \
+        -v "$PWD":/mnt \
+        $DOCKER_PREFIX/sphinx "$@"
 }
 
