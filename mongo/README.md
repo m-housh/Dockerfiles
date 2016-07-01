@@ -33,7 +33,8 @@ MONGO_ROOT_PASSWORD="secret"
 MONGO_USERNAME="api_owner"
 MONGO_PASSWORD="super-secret"
 MONGO_DBNAME="api"
-```
+```  
+
 ```bash
 $ docker pull mhoush/mongo
 $ docker run -d --name api_mongo \
@@ -42,6 +43,7 @@ $ docker run -d --name api_mongo \
     -v /path/to/data:/data/db
     mhoush/mongo
 ```
+-----------------------
 Same as above, but not using an env-file.
 ```bash
 $ docker pull mhoush/mongo
@@ -55,14 +57,15 @@ $ docker run -d --name api_mongo \
     -p "27017:27017"
     mhoush/mongo
 ```
-
+---------------------
 Passing other options to `mongod` at start-up.  If no options are passed, we call
 `mongod --auth`, however if you pass additional options, then you need to include the `--auth`
-option.
+option, if desired.
 ```bash
 $ docker pull mhoush/mongo
 $ docker run -d --name api_mongo \
     --env-file "$PWD/.env-file" \
     -p "27017:27017" \
+    -v /path/to/data:/data/db
     mhoush/mongo mongod --auth --smallfiles
 ```
