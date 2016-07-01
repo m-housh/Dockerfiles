@@ -15,7 +15,7 @@ user=mongodb
 [ "$(stat -c %U /data/db)" = "$user" ] || chown -R "$user" /data/db
 
 
-if ! [ -f /entrypoint/passwords_set ]; then
+if ! [ -f /data/db/.passwords_set ]; then
 
     eval busybox su -s /bin/sh -c "mongod" "$user" &
 
@@ -43,7 +43,8 @@ if ! [ -f /entrypoint/passwords_set ]; then
 EOF
     fi
 
-    touch /entrypoint/passwords_set
+    echo "This file is used by mhoush/mongo docker container." > /data/db/.passwords_set
+    echo "Please do not delete" >> /data/db/.passwords_set
     mongod --shutdown
 fi
 
