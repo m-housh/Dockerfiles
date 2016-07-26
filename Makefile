@@ -1,9 +1,12 @@
 .PHONY: feature
+
+SHELL = /usr/local/bin/zsh
+
 NAME := ""
 
 feature:
 	[ $(NAME) != "" ] && \
-		source .docker_aliases.sh && \
+		source ./.docker_func.sh && \
 		git_flow feature start $(NAME) && \
 		mkdir $(NAME) && \
 		touch "$(NAME)/Dockerfile" && \
