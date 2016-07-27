@@ -1,7 +1,5 @@
 FROM mhoush/tox
 
-ARG PWD
-
 COPY entrypoint.sh /entrypoint.sh
 ENV DEBUG "true"
 
