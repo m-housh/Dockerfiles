@@ -7,6 +7,9 @@ cleanup_images(){
     docker rmi -f $(docker images -q --filter dangling="true")
 }
 
+cleanup_containers(){
+    docker rm -f $(docker ps --all -q --filter status=exited)
+}
 
 # git flow
 git_flow(){
