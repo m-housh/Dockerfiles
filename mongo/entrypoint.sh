@@ -17,7 +17,8 @@ user=mongodb
 
 if ! [ -f /data/db/.passwords_set ]; then
 
-    eval busybox su -s /bin/sh -c "mongod" "$user" &
+
+    eval su -s /bin/sh -c "mongod" "$user" &
 
     RET=1
     while [ $RET -ne 0 ]; do
@@ -51,4 +52,4 @@ fi
 cmd="$@"
 [ $# -eq 1 ] && cmd="$cmd --auth"
 
-exec busybox su -s /bin/sh -c "$cmd" "$user"
+exec su -s /bin/sh -c "$cmd" "$user"
