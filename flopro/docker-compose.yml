@@ -1,0 +1,17 @@
+version: '2'
+services:
+  display:
+    image: suchja/x11server
+    environment:
+      VNC_PASSWORD: NEWpw
+    ports:
+      - "5901:5901"
+
+  wine:
+    build: ./
+    links:
+      - display:xserver
+    volumes_from:
+      - display
+    volumes:
+      - ./data:/data

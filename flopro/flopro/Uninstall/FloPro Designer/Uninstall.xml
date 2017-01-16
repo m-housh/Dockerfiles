@@ -1,0 +1,1124 @@
+<?xml version="1.0" encoding="iso-8859-1"?><SUF70UninstallData>
+<DataFilePath>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer\Uninstall.dat</DataFilePath>
+<CPRegKey>SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\FloPro Designer</CPRegKey>
+<EXELocation>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer\uninstall.exe</EXELocation>
+<AppShortcutFolderPath>C:\users\michael\Start Menu\Programs\FloPro Designer</AppShortcutFolderPath>
+<UninstallReverseOrder>1</UninstallReverseOrder>
+<UninstallFiles>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\FloPro Designer.chm</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\FloPro Designer.exe</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\FloPro Designer.hvd</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\Cooling Tower 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\msvcr70.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\tsearch_data.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\vfp7run.exe</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\vfp8r.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\vfp8renu.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Evapco\vfp8t.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Fulton\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\RBI\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Smith\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Air Separator 3.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Expansion Tank 3.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Brazed Plate 3.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Shell and Tube 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Pump 6.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Twin Tee 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Multiple Purpose 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Radiant Mixing Block 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Balancing 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Check 1.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Pressure Reducing 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\X-Pump Block 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\House, radiators.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\House with basement, radiators.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\House, floor radiation.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Reverse return heating.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Pump for each zone.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Mixing, 3-Way 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Mixing, 2-Way 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.exe</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.dat</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Cleaver-Brooks\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Multiaqua\Chiller, Air Cooled 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Multiaqua\Fan Coil 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Injection.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cases\Common systems.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cases\Split flow.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\3 zone moose antler.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Aerco\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Zone, 3-Way 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Zone, 2-Way 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Williams\Fan Coil 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Brazed Plate 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cannon Residence\Cannon Residence Floor Plan.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cannon Residence\Cannon Residence Heating System.flopro</Filename>
+<DecrementUsageCount>0</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\FHP Manufacturing\Heat Pump, Fluid-to-Air 1.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\FHP Manufacturing\Heat Pump, Fluid-to-Fluid 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\global.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\hvac.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\mfc42u.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\msvcp60.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\msvcrt.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\rechnen.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\Selection.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\data\admin.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\data\user.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Unico\Heat Pump, Air-to-Fluid 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Unico\Chiller, Air Cooled 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Unico\Fan Coil 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Low Water Cutoff 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Argo\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Crown\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Dunkirk\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\ECR\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Energy Kinetics\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\HTP\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Pennco\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Slant Fin\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Utica\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Weil-McLain\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Air Vent 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Flow Switch 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Hydraulic Separator 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Differential Bypass 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\ClimateMaster\Heat Pump, Fluid-to-Air 1.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\ClimateMaster\Heat Pump, Fluid-to-Fluid 2.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Burnham\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Axiom\Glycol Feed System 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Axiom\Condensate Neutralizer 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Variable Speed Drive 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Axiom\Chemical Feed System 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Laars\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Peerless\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Raypak\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\IEC\Fan Coil 4.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802AHCoeff.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802AIRLookup.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802CFMLookup.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802CoilType.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802DriveCodes.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802EngrConfig.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802Horsepower.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802ModelCoil.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCS802MotorData.dat</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\IEC Fan Coil Services\FCSServices.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Lochinvar\Boiler 9.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Siemens\Variable Speed Drive 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+<File>
+<Filename>C:\Program Files\HVAC Solution\Selection\Taco\Valve, Mixing, 4-Way 0.dll</Filename>
+<DecrementUsageCount>1</DecrementUsageCount>
+<UnregisterCOM>0</UnregisterCOM>
+<UnregisterFont>0</UnregisterFont>
+<FontDesc/>
+<BackupFile/>
+</File>
+</UninstallFiles>
+<UninstallShortcuts>
+<Filename>C:\users\michael\Desktop\FloPro Designer.lnk</Filename>
+<Filename>C:\users\michael\Application Data\Microsoft\Internet Explorer\Quick Launch\FloPro Designer.lnk</Filename>
+<Filename>C:\users\michael\Start Menu\Programs\FloPro Designer\FloPro Designer.lnk</Filename>
+</UninstallShortcuts>
+<UninstallSupportFiles>
+<Filename>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer\IRIMG1.JPG</Filename>
+<Filename>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer\IRIMG2.JPG</Filename>
+<Filename>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer\IRIMG3.JPG</Filename>
+</UninstallSupportFiles>
+<UninstallFolders>
+<FolderPath>C:\Program Files\HVAC Solution\Uninstall</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Uninstall\FloPro Designer</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\FloPro Designer</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Evapco</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Fulton</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\RBI</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Smith</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Taco</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\FloPro Designer\Examples</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Cleaver-Brooks</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Multiaqua</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cases</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Aerco</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Williams</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\FloPro Designer\Examples\Cannon Residence</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\FHP Manufacturing</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Taco\Heat Exchanger, Plate and Frame 4\data</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Unico</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Argo</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Crown</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Dunkirk</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\ECR</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Energy Kinetics</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\HTP</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Pennco</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Slant Fin</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Utica</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Weil-McLain</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\ClimateMaster</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Burnham</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Axiom</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Laars</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Peerless</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Raypak</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\IEC</FolderPath>
+<FolderPath>C:\Program Files\IEC Fan Coil Services</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Lochinvar</FolderPath>
+<FolderPath>C:\Program Files\HVAC Solution\Selection\Siemens</FolderPath>
+<FolderPath>C:\users\michael\Start Menu\Programs\FloPro Designer</FolderPath>
+</UninstallFolders>
+<SessionVars>
+<Var>
+<Name>%ProductName%</Name>
+<Value>FloPro Designer</Value>
+</Var>
+<Var>
+<Name>%CompanyName%</Name>
+<Value>HVAC Solution</Value>
+</Var>
+<Var>
+<Name>%ProductVer%</Name>
+<Value>3.4.1</Value>
+</Var>
+<Var>
+<Name>%Copyright%</Name>
+<Value>Copyright © 2016 %CompanyName%</Value>
+</Var>
+<Var>
+<Name>%CompanyURL%</Name>
+<Value>http://www.hvacsolution.com</Value>
+</Var>
+<Var>
+<Name>%WindowTitle%</Name>
+<Value>%ProductNameLongVer% Setup</Value>
+</Var>
+<Var>
+<Name>%AppFolder%</Name>
+<Value>C:\Program Files\HVAC Solution</Value>
+</Var>
+<Var>
+<Name>%AppShortcutFolderName%</Name>
+<Value>FloPro Designer</Value>
+</Var>
+<Var>
+<Name>%ProductNameLong%</Name>
+<Value>%ProductName%</Value>
+</Var>
+<Var>
+<Name>%ProductNameShort%</Name>
+<Value>%ProductName%</Value>
+</Var>
+<Var>
+<Name>%ProductNameLongVer%</Name>
+<Value>%ProductNameLong% %ProductVer%</Value>
+</Var>
+<Var>
+<Name>%ProductNameShortVer%</Name>
+<Value>%ProductNameShort% %ProductVer%</Value>
+</Var>
+<Var>
+<Name>%WindowTitleUninstall%</Name>
+<Value>%ProductName% Uninstaller</Value>
+</Var>
+<Var>
+<Name>%ApplicationDataFolder%</Name>
+<Value>C:\users\michael\Application Data</Value>
+</Var>
+<Var>
+<Name>%ApplicationDataFolderCommon%</Name>
+<Value>C:\users\Public\Application Data</Value>
+</Var>
+<Var>
+<Name>%DesktopFolder%</Name>
+<Value>C:\users\michael\Desktop</Value>
+</Var>
+<Var>
+<Name>%DesktopFolderCommon%</Name>
+<Value>C:\users\Public\Desktop</Value>
+</Var>
+<Var>
+<Name>%FontsFolder%</Name>
+<Value>C:\windows\Fonts</Value>
+</Var>
+<Var>
+<Name>%MyDocumentsFolder%</Name>
+<Value>C:\users\michael\My Documents</Value>
+</Var>
+<Var>
+<Name>%StartFolder%</Name>
+<Value>C:\users\michael\Start Menu</Value>
+</Var>
+<Var>
+<Name>%StartFolderCommon%</Name>
+<Value>C:\users\Public\Start Menu</Value>
+</Var>
+<Var>
+<Name>%StartProgramsFolder%</Name>
+<Value>C:\users\michael\Start Menu\Programs</Value>
+</Var>
+<Var>
+<Name>%StartProgramsFolderCommon%</Name>
+<Value>C:\users\Public\Start Menu\Programs</Value>
+</Var>
+<Var>
+<Name>%StartupFolder%</Name>
+<Value>C:\users\michael\Start Menu\Programs\StartUp</Value>
+</Var>
+<Var>
+<Name>%StartupFolderCommon%</Name>
+<Value>C:\users\Public\Start Menu\Programs\StartUp</Value>
+</Var>
+<Var>
+<Name>%CommonDocumentsFolder%</Name>
+<Value>C:\users\Public\Documents</Value>
+</Var>
+<Var>
+<Name>%MyMusicFolder%</Name>
+<Value>C:\users\michael\My Music</Value>
+</Var>
+<Var>
+<Name>%MyMusicFolderCommon%</Name>
+<Value>C:\users\Public\Music</Value>
+</Var>
+<Var>
+<Name>%MyPicturesFolder%</Name>
+<Value>C:\users\michael\My Pictures</Value>
+</Var>
+<Var>
+<Name>%MyPicturesFolderCommon%</Name>
+<Value>C:\users\Public\Pictures</Value>
+</Var>
+<Var>
+<Name>%MyVideosFolder%</Name>
+<Value>C:\users\michael\My Videos</Value>
+</Var>
+<Var>
+<Name>%MyVideosFolderCommon%</Name>
+<Value>C:\users\Public\Videos</Value>
+</Var>
+<Var>
+<Name>%ProgramFilesFolder64%</Name>
+<Value>C:\Program Files</Value>
+</Var>
+<Var>
+<Name>%CommonFilesFolder64%</Name>
+<Value>C:\Program Files\Common Files</Value>
+</Var>
+<Var>
+<Name>%ProgramFilesFolder%</Name>
+<Value>C:\Program Files</Value>
+</Var>
+<Var>
+<Name>%CommonFilesFolder%</Name>
+<Value>C:\Program Files\Common Files</Value>
+</Var>
+<Var>
+<Name>%SystemFolder%</Name>
+<Value>C:\windows\system32</Value>
+</Var>
+<Var>
+<Name>%WindowsFolder%</Name>
+<Value>C:\windows</Value>
+</Var>
+<Var>
+<Name>%SystemDrive%</Name>
+<Value>C:</Value>
+</Var>
+<Var>
+<Name>%TempFolder%</Name>
+<Value>C:\users\michael\Temp</Value>
+</Var>
+<Var>
+<Name>%TempLaunchFolder%</Name>
+<Value>C:\users\michael\Temp\_ir_sf_temp_1</Value>
+</Var>
+<Var>
+<Name>%RegOwner%</Name>
+<Value></Value>
+</Var>
+<Var>
+<Name>%RegOrganization%</Name>
+<Value></Value>
+</Var>
+<Var>
+<Name>%AppDrive%</Name>
+<Value>C:</Value>
+</Var>
+<Var>
+<Name>%DAOPath%</Name>
+<Value>C:\Program Files\Common Files\Microsoft Shared\DAO</Value>
+</Var>
+<Var>
+<Name>%LaunchUserName%</Name>
+<Value>michael</Value>
+</Var>
+<Var>
+<Name>%LaunchUserDomain%</Name>
+<Value>michael</Value>
+</Var>
+<Var>
+<Name>%LaunchUserApplicationDataFolder%</Name>
+<Value>C:\users\michael\Application Data</Value>
+</Var>
+<Var>
+<Name>%LaunchUserDesktopFolder%</Name>
+<Value>C:\users\michael\Desktop</Value>
+</Var>
+<Var>
+<Name>%LaunchUserMyDocumentsFolder%</Name>
+<Value>C:\users\michael\My Documents</Value>
+</Var>
+<Var>
+<Name>%LaunchUserStartProgramsFolder%</Name>
+<Value>C:\users\michael\Start Menu\Programs</Value>
+</Var>
+<Var>
+<Name>%LaunchUserStartFolder%</Name>
+<Value>C:\users\michael\Start Menu</Value>
+</Var>
+<Var>
+<Name>%LaunchUserStartupFolder%</Name>
+<Value>C:\users\michael\Start Menu\Programs\StartUp</Value>
+</Var>
+<Var>
+<Name>%LaunchUserMyMusicFolder%</Name>
+<Value>C:\users\michael\My Music</Value>
+</Var>
+<Var>
+<Name>%LaunchUserMyPicturesFolder%</Name>
+<Value>C:\users\michael\My Pictures</Value>
+</Var>
+<Var>
+<Name>%LaunchUserMyVideosFolder%</Name>
+<Value>C:\users\michael\My Videos</Value>
+</Var>
+<Var>
+<Name>%SourceFilename%</Name>
+<Value>Z:\Users\michael\Downloads\FloProDesigner.exe</Value>
+</Var>
+<Var>
+<Name>%SourceFolder%</Name>
+<Value>Z:\Users\michael\Downloads</Value>
+</Var>
+<Var>
+<Name>%SourceDrive%</Name>
+<Value>Z:</Value>
+</Var>
+<Var>
+<Name>%UserName%</Name>
+<Value>Michael Housh</Value>
+</Var>
+<Var>
+<Name>%UserCompany%</Name>
+<Value>Housh Heating and Air Conditioning, Inc</Value>
+</Var>
+<Var>
+<Name>%SpaceAvailable%</Name>
+<Value>91.24 GB</Value>
+</Var>
+<Var>
+<Name>%SpaceRequired%</Name>
+<Value>78.0 MB</Value>
+</Var>
+</SessionVars>
+</SUF70UninstallData>
