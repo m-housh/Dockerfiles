@@ -36,3 +36,8 @@ sphinx(){
         $DOCKER_PREFIX/sphinx "$@"
 }
 
+# water density calculator
+water-density(){
+    docker run --rm mhoush/density_calc "$@"
+}
+

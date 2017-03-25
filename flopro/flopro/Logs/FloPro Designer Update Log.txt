@@ -1,0 +1,36 @@
+[11/24/2016 20:04:30] Success	Update started: C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.exe
+[11/24/2016 20:04:30] Notice	Update engine version: 3.8.0.0
+[11/24/2016 20:04:30] Notice	Product: FloPro Designer
+[11/24/2016 20:04:30] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 20:04:30] Success	Include script: _TU20_Global_Functions.lua
+[11/24/2016 20:04:30] Success	Include script: CommonTrueUpdate.lua
+[11/24/2016 20:04:31] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 20:04:31] Success	Run client data event: Client Script
+[11/24/2016 20:04:31] Notice	Exit update process (Return code: 0)
+[11/24/2016 21:32:45] Success	Update started: C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.exe
+[11/24/2016 21:32:45] Notice	Update engine version: 3.8.0.0
+[11/24/2016 21:32:45] Notice	Product: FloPro Designer
+[11/24/2016 21:32:45] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 21:32:45] Success	Include script: _TU20_Global_Functions.lua
+[11/24/2016 21:32:45] Success	Include script: CommonTrueUpdate.lua
+[11/24/2016 21:32:46] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 21:32:46] Success	Run client data event: Client Script
+[11/24/2016 21:32:46] Notice	Exit update process (Return code: 0)
+[11/24/2016 21:36:35] Success	Update started: C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.exe
+[11/24/2016 21:36:35] Notice	Update engine version: 3.8.0.0
+[11/24/2016 21:36:35] Notice	Product: FloPro Designer
+[11/24/2016 21:36:35] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 21:36:35] Success	Include script: _TU20_Global_Functions.lua
+[11/24/2016 21:36:35] Success	Include script: CommonTrueUpdate.lua
+[11/24/2016 21:36:36] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 21:36:36] Success	Run client data event: Client Script
+[11/24/2016 21:36:36] Notice	Exit update process (Return code: 0)
+[11/24/2016 22:14:47] Success	Update started: C:\Program Files\HVAC Solution\TrueUpdateClient FloPro Designer.exe
+[11/24/2016 22:14:47] Notice	Update engine version: 3.8.0.0
+[11/24/2016 22:14:47] Notice	Product: FloPro Designer
+[11/24/2016 22:14:47] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 22:14:47] Success	Include script: _TU20_Global_Functions.lua
+[11/24/2016 22:14:47] Success	Include script: CommonTrueUpdate.lua
+[11/24/2016 22:14:47] Success	Language set: Primary = 9, Secondary = 1
+[11/24/2016 22:14:47] Success	Run client data event: Client Script
+[11/24/2016 22:14:47] Notice	Exit update process (Return code: 0)

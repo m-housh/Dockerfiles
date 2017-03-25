@@ -7,8 +7,8 @@ RUN apk add --update \
     pip install --upgrade pip==8.1.2 && \
     rm -rf /var/tmp/* /var/cache/apk/* /tmp/*
 
+RUN echo 'eval "$(pyenv init -)"' >> /root/.profile
+
 ONBUILD COPY . /usr/src/app
 VOLUME /usr/src/app
 WORKDIR /usr/src/app
-
-CMD ["tox"]
