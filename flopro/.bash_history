@@ -1,3 +1,0 @@
-xauth --help
-cd ..
-ls
