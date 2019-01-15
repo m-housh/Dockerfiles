@@ -24,7 +24,7 @@ usage(){
     cat <<EOF
 
 Container Usage:
-    
+
     docker run -it --rm \\
         -v "\$PWD/data":/data \\ # for persistance on the host
         -e DEVPI_PASSWORD=password \\ # set password for devpi root user
@@ -33,7 +33,7 @@ Container Usage:
         mhoush/devpi-server [options...] [args...]
 
     Options:
-        
+
         -w | --web:         Enable devpi-web interface
         -c | --client:      Enable devpi-client
         -h | --help:        Show this page and devpi-server help page
@@ -63,7 +63,7 @@ initialize() {
 
     print ""
     print "=> Initializing devpi-server"
-    devpi-server --restrict-modify root --start --host "$DEVPI_HOST" --port "$DEVPI_PORT" 
+    devpi-server --restrict-modify root --start --host "$DEVPI_HOST" --port "$DEVPI_PORT"
     devpi-server --status
     devpi use "http://$DEVPI_HOST:$DEVPI_PORT"
     devpi login root --password=''
@@ -72,7 +72,7 @@ initialize() {
     devpi logoff
     devpi-server --stop
     devpi-server --status
-    
+
     if [[ "$KEEP_CLIENT" == "false" ]]; then
         print ""
         print "=> We are done with devpi-client when prompted hit [y] to uninstall"
@@ -102,8 +102,19 @@ start_devpi_server() {
     fi
 }
 
+install_web_components() {
+
+  # Requires additional packages
+  apk add --update --no-cache --no-cache python3-dev libffi-dev musl-dev make gcc
+  rm -rf /var/cache/apk/*
+
+  # Pip install dev packages
+  pip install --no-cache-dir --upgrade devpi-web
+
+}
+
 main() {
-    
+
     # set-up defaults
     defaults
 
@@ -125,7 +136,7 @@ main() {
                 -w | --web )
                     print ""
                     print "=> Installing devpi-web..."
-                    pip install --no-cache-dir --upgrade devpi-web
+                    install_web_components
                     ;;
                 -c | --client )
                     print ""
